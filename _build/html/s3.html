@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction to Amazon S3 &mdash; aws_docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="aws_docs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Hi Sharath" href="sharath.html"/>
+        <link rel="prev" title="Introduction to Version Contorl" href="git.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> aws_docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="git.html">Introduction to Version Contorl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html#git-history">Git History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html#differcnce-between-svn-and-git">Differcnce between svn and git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html#what-is-github">What is github?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html#what-is-bitbucket">What is bitbucket?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html#installing-git-on-linux">Installing Git on Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html#installing-git-on-windows">Installing Git on Windows</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to Amazon S3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#amazon-s3-concepts">Amazon S3 Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#buckets">Buckets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#objects">Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keys">keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regions">Regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#amazon-s3-data-consistency-model">Amazon S3 Data Consistency Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#storage-classes">Storage Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#standard">STANDARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standard-ia">STANDARD_IA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glacier">GLACIER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reduced-redundancy">REDUCED_REDUNDANCY</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#features">Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#reduced-redundancy-storage">Reduced Redundancy Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bucket-policies">Bucket Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aws-identity-and-access-management">AWS Identity and Access Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#access-control-lists">Access Control Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#versioning">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operations">Operations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sharath.html">Hi Sharath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asg.html">Auto Scaling Groups</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">aws_docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Introduction to Amazon S3</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/s3.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-amazon-s3">
+<h1>Introduction to Amazon S3<a class="headerlink" href="#introduction-to-amazon-s3" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="amazon-s3-concepts">
+<h1>Amazon S3 Concepts<a class="headerlink" href="#amazon-s3-concepts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="buckets">
+<h2>Buckets<a class="headerlink" href="#buckets" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="objects">
+<h2>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="keys">
+<h2>keys<a class="headerlink" href="#keys" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="regions">
+<h2>Regions<a class="headerlink" href="#regions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="amazon-s3-data-consistency-model">
+<h2>Amazon S3 Data Consistency Model<a class="headerlink" href="#amazon-s3-data-consistency-model" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>read-after-write consistency for PUTS of new objects in your S3 bucket</li>
+<li>Amazon S3 offers eventual consistency for overwrite PUTS and DELETES</li>
+<li>Updates to a single key are atomic</li>
+<li>Amazon S3 does not currently support object locking</li>
+</ul>
+</div>
+</div>
+<div class="section" id="storage-classes">
+<h1>Storage Classes<a class="headerlink" href="#storage-classes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="standard">
+<h2>STANDARD<a class="headerlink" href="#standard" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="standard-ia">
+<h2>STANDARD_IA<a class="headerlink" href="#standard-ia" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="glacier">
+<h2>GLACIER<a class="headerlink" href="#glacier" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="reduced-redundancy">
+<h2>REDUCED_REDUNDANCY<a class="headerlink" href="#reduced-redundancy" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="37%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Storage_class</th>
+<th class="head">Durability</th>
+<th class="head">Availability</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>STANDARD</td>
+<td>99.999999999%</td>
+<td>99.99%</td>
+</tr>
+<tr class="row-odd"><td>STANDARD_IA</td>
+<td>99.999999999%</td>
+<td>99.9%</td>
+</tr>
+<tr class="row-even"><td>GLACIER</td>
+<td>99.999999999%</td>
+<td>99.99%</td>
+</tr>
+<tr class="row-odd"><td>RRS</td>
+<td>99.99% 99.99%</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="features">
+<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="reduced-redundancy-storage">
+<h2>Reduced Redundancy Storage<a class="headerlink" href="#reduced-redundancy-storage" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="bucket-policies">
+<h2>Bucket Policies<a class="headerlink" href="#bucket-policies" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="aws-identity-and-access-management">
+<h2>AWS Identity and Access Management<a class="headerlink" href="#aws-identity-and-access-management" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="access-control-lists">
+<h2>Access Control Lists<a class="headerlink" href="#access-control-lists" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="versioning">
+<h2>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sharath.html" class="btn btn-neutral float-right" title="Hi Sharath" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="git.html" class="btn btn-neutral" title="Introduction to Version Contorl" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, V Madhu Sudhan.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

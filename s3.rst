@@ -1,0 +1,57 @@
+Introduction to Amazon S3
+=========================
+
+Amazon S3 Concepts
+==================
+
+Buckets 
+-------
+Objects
+-------
+keys
+----
+Regions
+-------
+Amazon S3 Data Consistency Model
+---------------------------------
+* read-after-write consistency for PUTS of new objects in your S3 bucket 
+* Amazon S3 offers eventual consistency for overwrite PUTS and DELETES
+* Updates to a single key are atomic
+* Amazon S3 does not currently support object locking
+
+
+Storage Classes
+===============
+STANDARD
+--------
+STANDARD_IA
+-----------
+GLACIER
+-------
+REDUCED_REDUNDANCY
+------------------
+
+
+============== =============== ============
+Storage_class  Durability      Availability
+============== =============== ============
+STANDARD	99.999999999%  99.99%
+STANDARD_IA	99.999999999%  99.9%
+GLACIER		99.999999999%  99.99% 
+RRS		99.99% 99.99%
+============== =============== ============
+Features
+========
+
+Reduced Redundancy Storage
+--------------------------
+Bucket Policies
+---------------
+AWS Identity and Access Management
+----------------------------------
+Access Control Lists
+-------------------
+Versioning
+----------
+Operations
+----------
