@@ -15,7 +15,6 @@ guide
    
    git
    s3
-   sharath
    asg
 
 Indices and tables
